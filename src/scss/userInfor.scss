@@ -1,0 +1,280 @@
+.userinfor {
+    //   custom placehoder
+    ::placeholder {
+        color: rgba(255, 255, 255, 0.315) !important;
+    }
+    background-image: url("../assets/image/userInfor/backgroundUserInfor.jpg");
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #00000008;
+        z-index: 0;
+    }
+    .changeUserInfo {
+        margin-top: 138px;
+        position: relative;
+        z-index: 1;
+        margin-left: 40px;
+        margin-right: 40px;
+        .changeUserInfo_top {
+            height: 369px !important;
+            .changeUserInfo_left {
+                width: 30%;
+                border: 2px solid wheat;
+                border-radius: 10px;
+                box-shadow: 0 0 14px 0px wheat;
+                background: #00000059;
+                font-size: 17px;
+                button {
+                    border-bottom: 1px dashed grey;
+                    margin-right: 40px;
+                    margin-left: 40px;
+                    color: pink !important;
+                    &:hover {
+                        color: green !important;
+                    }
+                }
+
+                .exit:hover {
+                    color: white !important;
+                }
+                .active {
+                    background-color: transparent !important;
+                }
+            }
+            .changeUserInfo_right {
+                width: 70%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                .personInfor {
+                    width: 73%;
+                    border: 2px solid wheat;
+                    border-radius: 10px;
+                    padding: 40px;
+                    background: #00000059;
+                    box-shadow: 0 0 14px 0px wheat;
+                    p {
+                        font-size: 22px;
+                    }
+
+                    span {
+                        width: 40%;
+                        font-size: 16px;
+                    }
+
+                    input {
+                        font-size: 18px;
+                        background: none;
+                        border: none;
+                        width: 60%;
+                        color: white;
+                    }
+                    .divfirst {
+                        position: relative;
+                        &:hover {
+                            .changeusername {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .changeusername {
+                        opacity: 0;
+                        position: absolute;
+                        right: 0;
+                        top: -15px;
+                        font-size: 13px;
+                        text-align: center;
+                        background: #ffffff63;
+                        border-radius: 8px;
+                        color: orange;
+                        // &:hover {
+                        //     opacity: 1;
+                        // }
+                    }
+                }
+                .bookinghistory {
+                    height: 100%;
+                    border: 2px solid wheat;
+                    border-radius: 10px;
+                    box-shadow: 0 0 14px 0px wheat;
+                    background: #00000059;
+                    table {
+                        height: 75%;
+                        font-size: 15px;
+                        thead {
+                            display: inline-block;
+                            width: 100%;
+                            tr {
+                                color: yellow;
+                                .ordinal {
+                                    padding-left: 20px;
+                                }
+                                .address {
+                                    padding-right: 41px;
+                                }
+                                .screen {
+                                    padding-right: 41px;
+                                }
+                                .seats {
+                                    padding-right: 48px;
+                                }
+                                th {
+                                    font-weight: normal;
+                                }
+                            }
+                        }
+                        .scrollit {
+                            overflow-y: scroll !important;
+                            overflow-x: hidden;
+                            height: 90%;
+                            tr {
+                                border-bottom: 1px dashed rgba(128, 128, 128, 0.575);
+                               
+                                th {
+                                    font-weight: normal;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ==========> validation
+// ==========> 1200
+@media screen and (max-width: 1200px) {
+    .userinfor .changeUserInfo .changeUserInfo_top .changeUserInfo_right .bookinghistory table {
+        font-size: 13px;
+    }
+}
+// ==========> 992
+@media screen and (max-width: 992px) {
+    .userinfor {
+        .changeUserInfo {
+            margin-top: 112px;
+            .changeUserInfo_top {
+                flex-direction: column;
+                .changeUserInfo_left {
+                    width: 70%;
+                    flex-direction: row !important;
+                    margin: 0 !important;
+                    justify-content: space-evenly;
+                    padding: 10px !important;
+                    margin-bottom: 30px !important;
+                    button {
+                        margin: 0;
+                        border-bottom: none;
+                        padding: 0 !important;
+                    }
+                    a {
+                        margin: 0 !important;
+                    }
+                }
+                .changeUserInfo_right {
+                    width: 100%;
+                    .personInfor {
+                        width: 70%;
+                    }
+                    .bookinghistory {
+                        width: 100%;
+                        h4 {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// ==========> 768
+@media screen and (max-width: 768px) {
+    .userinfor {
+        .changeUserInfo {
+            margin-left: 3px;
+            margin-right: 3px;
+            .personInfor {
+                width: 72% !important;
+            }
+            .bookinghistory {
+                table {
+                    tbody {
+                        tr {
+                            th:nth-child(1) {
+                                padding-left: 33px !important;
+                            }
+                            th{
+                                padding:0 !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// ==========> 576
+@media screen and (max-width: 576px) {
+    .userinfor{
+        .changeUserInfo_left{
+            font-size: 15px !important;
+        }
+        .changeUserInfo_right{
+            .personInfor{
+                width: 85% !important;
+            }
+            .bookinghistory{
+                table{
+                    tbody{
+                        tr{
+                            margin-bottom: 4px !important;
+                            margin-left: 10px;
+                            th{
+                                padding:0 !important;
+                            }
+                            th:nth-child(1) {
+                                padding-left: 0px !important;
+                            }
+                            
+                            th:nth-child(4){
+                                padding-left: 3px;
+                                background-color: rgba(255, 255, 0, 0.349);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: green;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: orange;
+}

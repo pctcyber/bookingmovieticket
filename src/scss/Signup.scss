@@ -1,0 +1,177 @@
+.signup {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0.26), rgba(0, 0, 255, 0.331)),
+        url(../assets/image/login_signup/backgroundSignUp_Login.jpg);
+    background-size: contain;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 1000px;
+}
+// modalSignup
+.modalSingup {
+    border-radius: 14px;
+    .closeModalSignup {
+        position: absolute;
+        right: 0;
+        transform: translate(50%, -50%);
+        border-radius: 50%;
+        background-color: yellowgreen !important;
+        border-color: white !important;
+        &:hover {
+            background-color: rgb(182, 205, 50) !important;
+        }
+    }
+    .formRegister {
+        p {
+            font-size: 20px;
+            color: green00;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #3f33ff;
+            margin-bottom: 14px;
+        }
+        form {
+            .form-group {
+                margin-bottom: 14px;
+                input {
+                    font-size: 13px;
+                }
+                .alert {
+                    text-align: left;
+                    font-size: 12px;
+                    padding: 4px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+//  SwalAlert
+.swal2-container {
+    background: rgba(0, 0, 0, 0.5) !important;
+    // alertSuccess
+    .alertSignupSuccess {
+        padding: 0;
+        background-color: #FFFFCC;
+        box-shadow: 0 0 10px 7px grey;
+        border-radius: 26px;
+        .swal2-header{
+            .swal2-title {
+                color: #00CC00 !important;
+                letter-spacing: 2px;
+                font-size: 22px;
+                margin-bottom: 0;
+            }
+        }
+        
+        .swal2-warning {
+            width: 50px;
+            height: 50px;
+
+            .swal2-icon-content {
+                font-size: 40px;
+            }
+        }
+        .swal2-actions{
+            .swal2-confirm{
+                margin-bottom: 20px !important;
+            }
+        }
+    }
+    // alertError
+    .alertSignupError {
+        padding: 0;
+        background-color: #CCFFCC;
+        box-shadow: 0 0 10px 7px grey;
+        border-radius: 26px;
+        .swal2-title {
+            color: #ff00009e !important;
+            letter-spacing: 2px;
+            font-size: 17px;
+            margin-bottom: 0;
+        }
+        .swal2-warning {
+            width: 50px;
+            height: 50px;
+
+            .swal2-icon-content {
+                font-size: 40px;
+            }
+        }
+        .swal2-actions{
+            .swal2-confirm{
+                margin-bottom: 20px !important;
+            }
+        }
+    }
+}
+
+// ------- validation ---------
+
+// ========> 1200px
+@media screen and (max-width: 1200px) {
+    .modalSingup {
+        width: 31% !important ;
+    }
+}
+// ========> 992px
+@media screen and (max-width: 992px) {
+    .modalSingup {
+        width: 37% !important;
+        .formRegister {
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+    // swalalert2
+    .swal2-container{
+
+        .alertSignupSuccess{
+            width: 52% !important;
+
+        }
+        .alertSignupError{
+            width: 52% !important;
+        }
+    }
+}
+
+// ========> 768px
+
+@media screen and (max-width: 768px) {
+    .modalSingup {
+        width: 50% !important ;
+    }
+     // swalalert2
+     .swal2-container{
+
+        .alertSignupSuccess{
+            width: 69% !important;
+
+        }
+        .alertSignupError{
+            width: 69% !important;
+        }
+    }
+}
+
+// ========> 576px
+@media screen and (max-width: 576px) {
+    .modalSingup {
+        width: 70% !important ;
+    }
+    .alertSignupSuccess{
+        width: 85% !important;
+        .swal2-header{
+            .swal2-title {
+               font-size: 22px !important;
+            }
+        }
+
+    }
+    .alertSignupError {
+        width: 85% !important;
+    }
+}

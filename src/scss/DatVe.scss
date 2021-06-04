@@ -1,0 +1,271 @@
+.giughe {
+    background-color: white;
+    .swal-icon {
+        width: 70px;
+        height: 70px;
+        .swal-icon--warning__body {
+            height: 33px;
+            .swal-icon--warning__dot {
+                margin-left: 0;
+                transform: translateX(-50%);
+            }
+        }
+    }
+    .swal-footer {
+        text-align: center;
+        .swal-button--cancel {
+            background-color: #ffc0cba6 !important;
+            color: #ff0000c4;
+        }
+        .swal-button--confirm {
+            background-color: rgba(0, 128, 0, 0.719) !important;
+        }
+    }
+}
+
+.datve {
+    background-image: url(../assets/image/datve/bgdatve.jpg);
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #21252982;
+        z-index: 0;
+    }
+    .booking {
+        margin-top: 27px;
+        padding-top: 77px;
+        position: relative;
+        z-index: 1;
+        margin-right: 50px;
+        margin-left: 50px;
+        .chitietdatve {
+            padding-right: 45px;
+            padding-left: 45px;
+            .thongtindatve {
+                height: 459px;
+                padding: 30px;
+                background: #00000085;
+                border-radius: 11px;
+                box-shadow: 0 0 15px 0px white;
+                p {
+                    font-size: 14px;
+                    border-bottom-style: dashed;
+                    border-bottom-color: #ffffff36;
+                }
+                .theaterfilm {
+                    width: 100%;
+                    box-shadow: none;
+                }
+                .tenphim {
+                    letter-spacing: 4px;
+                    font-size: 22px;
+                }
+            }
+        }
+
+        .screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            .tencr_tgiandatghe {
+                .tencumrap {
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    letter-spacing: 3px;
+                    animation: change_color linear 1s infinite;
+                }
+                .countdown-wrapper {
+                    font-size: 19px !important;
+                }
+            }
+
+            .bgscreen {
+                width: 90%;
+                height: 12px;
+                background-color: pink;
+                position: relative;
+                z-index: 1;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 60px;
+                    transform: translateY(100%);
+                    border-bottom: 61px solid #1890ffc2;
+                    border-left: 57px solid transparent;
+                    border-right: 50px solid transparent;
+                }
+                &:before {
+                    content: "Screen";
+                    position: absolute;
+                    top: 190%;
+                    left: 50%;
+                    color: white;
+                    font-size: 20px;
+                    transform: translateX(-50%);
+                }
+            }
+
+            .lishGhe {
+                margin-top: 61px;
+                .ghe {
+                    margin: 8px;
+                    padding-left: 9px;
+                    padding-right: 9px;
+                    box-shadow: 0 0 2px 2px #ffff00c7;
+                    border: none;
+
+                    &:hover {
+                        span {
+                            opacity: 1;
+                        }
+                    }
+                    span {
+                        opacity: 0;
+                    }
+                }
+                .ghe_thuong {
+                    background-color: pink;
+                }
+                .ghedadat {
+                    background-color: grey;
+                    cursor: no-drop;
+                }
+                .ghedangchon {
+                    background-color: green;
+                    span {
+                        opacity: 1;
+                    }
+                }
+            }
+            .motaghe {
+                padding-top: 5px;
+                border-top-style: dashed;
+                border-block-color: rgba(255, 255, 255, 0.432);
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-left: 15px;
+                    margin-right: 15px;
+                    button {
+                        width: 30px;
+                        height: 30px;
+                    }
+                    .casual {
+                        background-color: pink;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ========> validation
+// ========> 1200
+@media screen and (max-width: 1200px) {
+    .datve {
+        .booking {
+            .chitietdatve {
+                .thongtindatve {
+                    .tenphim {
+                        font-size: 19px !important;
+                    }
+                    p {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    .ghe {
+        margin: 5px !important ;
+    }
+}
+// ========> 992
+@media screen and (max-width: 992px) {
+    .datve {
+        position: relative;
+        height: 1034px;
+        .booking {
+            .screen {
+                .tencr_tgiandatghe {
+                    p {
+                        font-size: 12px !important;
+                    }
+                }
+            }
+            .chitietdatve {
+                display: flex;
+                justify-content: center;
+                .thongtindatve {
+                    margin-top: 37px;
+                    width: 63%;
+                    height: 444px;
+                }
+            }
+        }
+    }
+}
+// ========> 768
+@media screen and (max-width: 768px) {
+    .giughe {
+        width: 418px;
+    }
+    .datve .booking {
+        margin-left: 22px;
+        margin-right: 22px;
+        .chitietdatve {
+            padding-right: 45px;
+            padding-left: 45px;
+            .thongtindatve {
+                margin-top: 37px;
+                .tenphim {
+                    font-size: 15px !important;
+                }
+            }
+        }
+    }
+}
+// ========> 576
+@media screen and (max-width: 576px) {
+    .datve {
+        .booking {
+            .screen {
+                .lishGhe {
+                    .ghe {
+                        padding-left: 6px;
+                        padding-right: 6px;
+                    }
+                }
+            }
+        }
+        .chitietdatve {
+            .thongtindatve {
+                width: 87% !important;
+            }
+        }
+    }
+}
+
+@keyframes change_color {
+    from {
+        color: white;
+    }
+    to {
+        color: orange;
+    }
+}

@@ -1,0 +1,228 @@
+.theater {
+    width: 80%;
+    border: 1px solid #0000002e;
+    border-radius: 6px;
+     box-shadow: 0 0 12px 11px #ffefd56b;
+    padding-top: 15px;
+    height: 604px;
+    background: #ffffccb8;
+    
+    .rendercumrap {
+        // rendercumrap_row1
+        .rendercumrap_row1 {
+        width: 15%;
+
+            padding-right: 5px;
+            button {
+                &:hover{
+                    background-color: rgba(240, 255, 240, 0.664);
+                }
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+            .active {
+                background-color: #ffc1077a;
+            }
+        }
+
+        // rendercumrap_row2
+        .rendercumrap_row2 {
+            width: 85%;
+
+            .renderlogo {
+                .renderlogo_row1 {
+                    border-right: 1px dashed grey;
+                    border-left: 1px dashed grey;
+                    padding-left: 8px;
+                    display: block;
+                    width: 38%;
+                    height: 522px;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                    .nav-link {
+                        border-bottom: 1px dashed #808080a1;
+                        &:hover{
+                            background-color: rgba(240, 255, 240, 0.664);
+                        }
+                    }
+                    .diachi {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        color: green;
+                    }
+                    .tencumrap_infor {
+                        font-weight: 600;
+                        color: blue;
+                    }
+                    .active {
+                        background-color: #ffc1077a;
+                    }
+                }
+                .renderlogo_row2 {
+                    width: 62%;
+                    .info_film {
+                        display: flex;
+                        border-bottom: 1px dashed grey;
+                        padding-bottom: 12px;
+                        margin-left: 4px;
+                        .hinhfilm {
+                            img {
+                                width: 90%;
+                                height: 84px;
+                                border-radius: 6px;
+                                cursor: pointer !important;
+
+                            }
+                        }
+                        .col9_infor {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            .tenphim_infor {
+                                font-weight: 400;
+                                font-size: 17px;
+                                color: blue;
+                            }
+                            .lichchieu_infor {
+                                cursor: pointer;
+                                border: 2px solid orange;
+                                padding: 4px;
+                                border-radius: 6px;
+                                font-size: 16px;
+                                &:hover{
+                                    background-color: rgba(240, 255, 240, 0.664);
+                                    border:2px solid rgba(240, 255, 240, 0.664);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ==========> validation
+
+// ==========> 1200
+@media screen and(max-width:1200px) {
+    .theater {
+        width: 90%;
+    }
+}
+
+// ==========> 992
+@media screen and(max-width:992px) {
+    .theater {
+        height: 768px;
+        .rendercumrap {
+            flex-direction: column;
+            .rendercumrap_row1 {
+                flex-direction: row !important;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .rendercumrap_row2 {
+                width: 100%;
+                margin-top: 20px;
+                .renderlogo {
+                    flex-direction: column;
+                    .renderlogo_row1 {
+                        padding-top: 8px;
+                        padding-bottom: 21px !important;
+                        border-radius: 8px;
+                        box-shadow: 0 0 3px 3px #ffa50059;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row !important;
+                        height: 240px;
+                        border-left: none;
+                        border-right: none;
+                        margin-bottom: 34px;
+
+                        .nav-link {
+                            width: calc(100% / 3);
+                            height: 100px;
+                            border-bottom: none;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            .diachi {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                    .renderlogo_row2 {
+                        box-shadow: 0 0 3px 3px #ffa50075;
+                        border-radius: 5px;
+                        padding-top: 10px;
+                        padding-left: 5px;
+                        width: 100%;
+                        height: 324px;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ==========> 768
+@media screen and(max-width:768px) {
+    .theater {
+        .rendercumrap {
+            .rendercumrap_row1 {
+                button {
+                    img {
+                        width: 45px;
+                        height: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ==========> 576
+@media screen and(max-width:576px) {
+    .theater {
+        .rendercumrap {
+            .rendercumrap_row1 {
+                button {
+                    padding: 10px;
+                }
+            }
+            .rendercumrap_row2 {
+                .renderlogo {
+                    .renderlogo_row1 {
+                        .nav-link {
+                            padding: 6px;
+                            .tencumrap_infor{
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                    .renderlogo_row2 {
+                        .info_film {
+                            .hinhfilm {
+                                img {
+                                    width: 100%;
+                                    height: 78px;
+                                }
+                            }
+                            .col9_infor {
+                                .lichchieu_infor {
+                                    margin-right: 7px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

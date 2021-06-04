@@ -1,0 +1,201 @@
+.lity {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    .lity-wrap {
+        margin-right: 0;
+        top: 112px;
+        ::before {
+            margin-right: 0;
+        }
+        .lity-content {
+            transform: none;
+            transition: none;
+            .lity-iframe-container {
+                margin-top: 0px;
+                overflow: hidden;
+                border-radius: 20px;
+                iframe {
+                    height: 465px;
+                    border-radius: 30px;
+                }
+            }
+            &::after {
+                box-shadow: none;
+            }
+        }
+        .lity-close {
+            right: 0;
+            top: 0;
+            position: absolute;
+            transform: translate(54%, -51%);
+            border: 2px solid transparent;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background: #0099ff;
+        }
+    }
+}
+
+.carousel_film {
+    // height: 400px;
+    padding-top: 96px !important;
+    margin-left: 70px;
+    margin-right: 70px;
+    .slick-slider {
+        width: 69%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .four_carousel {
+        position: relative;
+        height: 486px !important;
+        border-radius: 10px;
+        cursor: pointer;
+        img {
+            border: 2px solid green;
+            border-radius: 29px;
+            box-shadow: 0 0 10px 10px;
+        }
+        &:hover {
+            .lityFilm {
+                opacity: 1;
+                transition: opacity 0.5s linear;
+            }
+        }
+        .lityFilm {
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 73px;
+            height: 41px;
+            border: 1px solid transparent;
+            background-color: #3366ffb3;
+            border-radius: 18px;
+            button {
+                width: auto;
+                height: auto;
+                border: transparent;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+    transition: all 2s linear;
+    &:hover {
+        .slick-arrow {
+            opacity: 1;
+            transition: all 1s linear;
+        }
+        .slick-arrow {
+            background-color: #ffcc33a4;
+        }
+    }
+    .slick-prev{
+        left: -45px;
+    }
+    .slick-next{
+        right: -45px;
+    }
+    .slick-arrow {
+        opacity: 0;
+        width: 40px;
+        height: 40px;
+        z-index: 2;
+        border: 2px solid #ffcc33;
+        border-radius: 14px;
+        &:hover {
+            background-color: #33ff33;
+        }
+    }
+    .slick-prev:before {
+        content: "<" !important;
+        color: #ff66ff !important;
+        font-size: 30px;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        font-weight: bolder;
+    }
+
+    .slick-next:before {
+        content: ">" !important;
+        color: #ff66ff !important;
+        font-size: 30px;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        font-weight: bolder;
+    }
+}
+
+// =======> Animation
+
+// ==========> 1200px
+@media screen and (max-width: 1200px) {
+    .lity {
+        .lity-wrap {
+            .lity-container {
+                width: 86%;
+            }
+        }
+    }
+}
+// ==========> 992px
+@media screen and (max-width: 992px) {
+    .lity {
+        .lity-wrap {
+            .lity-container {
+                width: 86%;
+                .lity-content {
+                    .lity-iframe-container {
+                        iframe {
+                            height: 361px;
+                        }
+                    }
+                    &::after {
+                    }
+                }
+            }
+        }
+    }
+}
+// ==========> 768px
+@media screen and (max-width: 768px) {
+    .lity {
+        .lity-wrap {
+            .lity-container {
+                width: 86%;
+                .lity-content {
+                    .lity-iframe-container {
+                        iframe {
+                            height: 274px;
+                        }
+                    }
+                    &::after {
+                    }
+                }
+            }
+        }
+    }
+}
+// ==========> 576px
+@media screen and (max-width: 576px) {
+    .lity {
+        .lity-wrap {
+            .lity-container {
+                width: 86%;
+                .lity-iframe-container {
+                    iframe {
+                        height: 234px !important;
+                    }
+                }
+                &::after {
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,242 @@
+// confirmLogin
+.swal-overlay{
+    background-color: rgba(0,0,0,.76);
+    .confirmlogin{
+        background-color: #FFFFCC;
+        .swal-icon{
+            &:before{
+                background: none;
+            }
+            &:after{
+                background: none;
+            }
+            .swal-icon--success__hide-corners{
+                background-color: transparent;
+            }
+        }
+        .swal-text{
+            margin-top: 24;
+            font-size: 20px;
+            color: hotpink;
+        }
+        .swal-footer{
+            margin-top: 0px;
+            text-align: center;
+        }
+    }
+}
+
+
+// bgFilm
+.bgFilm {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 45px;
+    height: 1054px;
+    width: 100%;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(51, 51, 51, 0.568);
+        z-index: 1;
+    }
+    .filmdetail {
+        position: relative;
+        margin-top: 90px !important;
+        margin-left: 145px;
+        margin-right: 145px;
+        z-index: 2;
+        // row1
+        .row1 {
+            background-color: #000000bf;
+            border-radius: 7px;
+            box-shadow: 0 0 27px 2px wheat;
+
+            .col41 {
+                .bgFilmDetail {
+                    width: 100%;
+                    height: 378px;
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    border-radius: 7px;
+                    cursor: pointer;
+                    box-shadow: 0 0 4px 4px white;
+
+                }
+            }
+            .col42 {
+                margin: auto;
+                font-size: 17px;
+                span {
+                    margin-left: 10px;
+                }
+                .filmname {
+                    font-size: 28px;
+                    white-space: 5px;
+                    letter-spacing: 2px;
+
+                    text-transform: uppercase;
+                }
+                .description {
+                    text-align: justify;
+                    height: 80px;
+                    overflow: auto;
+                    padding-right: 7px;
+                    span {
+                        font-size: 14px;
+                    }
+                }
+                .btngetticket {
+                    background-color: green;
+
+                    border-radius: 10px;
+                    animation: changeBackground linear 0.5s infinite;
+                }
+            }
+            // row2responsiv
+            .row2reponsive {
+                display: none;
+            }
+            // row2
+
+            .row2 {
+                background-color: ghostwhite;
+                border-radius: 7px;
+                padding-top: 30px;
+                padding-bottom: 70px;
+                padding-left: 60px;
+                .row2CumRap {
+                    width: 30%;
+                    .btncumrap {
+                        &:hover {
+                            background-color: rgba(128, 128, 128, 0.11);
+                            transition: all 0.3s linear;
+                        }
+                        .tenhethongrap {
+                            text-transform: uppercase;
+                            font-size: 13px;
+                        }
+                    }
+                }
+                .row2ngaygiochieu {
+                    width: 70%;
+                    height: 400px;
+                    overflow-y: scroll;
+                    .tab-pane {
+                        border-left: 1px solid grey;
+                        padding-left: 20px;
+                        .itemcumrap {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            border-bottom: 0.5px solid rgba(128, 128, 128, 0.308);
+                            .tenCumRap {
+                                font-size: 15px;
+                                color: red;
+                            }
+                            .ngaychieugiochieu {
+                                color: #0d4556 !important;
+                                background-color: rgba(172, 255, 47, 0.2);
+                                font-size: 17px;
+                                border-radius: 7px;
+                                border: none;
+                                &:hover {
+                                    background-color: grey;
+                                    color: blue !important;
+                                    transition: all linear 0.3s;
+                                }
+                                .ngaychieu {
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// =========> responsive
+// =========> 1200px
+@media screen and (max-width: 1200px) {
+    .row2 {
+        padding-left: 25px !important;
+        .row2CumRap {
+            padding-right: 0 !important;
+            margin: auto;
+            button {
+                padding-left: 2px;
+                padding-right: 0;
+            }
+        }
+    }
+}
+// =========> 992px
+@media screen and (max-width: 992px) {
+    .bgFilm {
+        height: 1482px;
+        .row1 {
+            .col41 {
+                padding: 54px !important;
+            }
+            .col42 {
+                padding-left: 54px;
+                padding-right: 54px;
+                margin-bottom: 20px !important;
+            }
+        }
+        // row2
+        .row2 {
+            .responsive {
+                flex-direction: column;
+                .row2CumRap {
+                    width: 100% !important;
+                    justify-content: space-around;
+                    margin-right: 0;
+                    .btncumrap {
+                        padding-right: 6px;
+                        padding-left: 6px;
+                        .tenhethongrap {
+                            display: none;
+                        }
+                    }
+                }
+                .row2ngaygiochieu {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+// =========> 768px
+@media screen and (max-width: 768px) {
+    .bgFilm .filmdetail {
+        margin-right: 60px;
+        margin-left: 60px;
+    }
+}
+// =========> 576px
+@media screen and (max-width: 576px) {
+    .confirmlogin{
+        width: 345px;
+    }
+    .bgFilm .filmdetail {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+
+@keyframes changeBackground {
+    from {
+        color: blue;
+    }
+    to {
+        color: yellow;
+    }
+}

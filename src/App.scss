@@ -1,0 +1,49 @@
+// --------------> Lity -----------
+
+
+// .lity {
+//     background-color: rgba(0, 0, 0, 0.3);
+//     .lity-wrap{
+//         margin-right: 0;
+//         ::before{
+//             margin-right: 0;
+//         }
+//         .lity-content {
+//         transform: none;
+//         transition: none;
+//         .lity-iframe-container {
+//             margin-top: 0px;
+//             animation: Fade 1s linear;
+//         }
+//         &::after{
+//             box-shadow: none;
+//         }
+        
+//     }
+//     .lity-close {
+//         right: 123px ;
+//         top: 79px ;
+//         animation: Fade 2s linear;
+//     }
+//     }
+// }
+
+// ---------------> Modal-----------
+.ant-modal-root{
+    .ant-modal-mask{
+        // max-width: 1264px;
+    }
+    .ant-modal-wrap{
+        // max-width: 1264px;
+    }
+}
+
+
+@keyframes Fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
