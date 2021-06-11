@@ -11,6 +11,10 @@ import FilmDetail from './Layout_Component/FilmDetail/FilmDetail'
 import DatVe from './Layout_Component/DatVe/DatVe'
 import UserInfo from './Layout_Component/UserInfo/UserInfo'
 import Loading from './Layout_Component/Loading/Loading'
+import LoginAdmin from './pages/Admin/LoginAdmin'
+import SignUpAdmin from './pages/Admin/SignUpAdmin'
+import Admin from './pages/Admin/Admin'
+// import AdminMagaFilm from './pages/Admin/AdminMagaFilm'/
 export const history = createBrowserHistory()
 
 
@@ -25,7 +29,7 @@ function App() {
 
           {/* update userinfo */}
           <Route exact path="/userinfo" component={UserInfo} />
-         
+
           {/* Login -- SignUp */}
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
@@ -33,6 +37,12 @@ function App() {
           <Route exact path="/detail/:id" component={FilmDetail} />
           {/* Mua ve */}
           <Route exact path='/datve/:id' component={DatVe} />
+          {/* admin */}
+         
+          <Route exact path='/admin' component={Admin} />
+          <Route exact path='/login_admin' component={LoginAdmin} />
+          <Route exact path='/signup_admin' component={SignUpAdmin} />
+
           <Route exact path="/" component={Home} />
         </Switch>
       </div>

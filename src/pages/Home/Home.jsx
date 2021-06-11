@@ -22,12 +22,13 @@ export default function Home(props) {
             <Header path={path} />
             <ScrollIndicator />
             <Carousel_Slider />
+
+          
             <ShowTime />
 
             <Theaters />
 
             <News />
-
             <Footer />
             <BackToTopBtn/>
         </div>

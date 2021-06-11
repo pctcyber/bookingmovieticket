@@ -1,12 +1,13 @@
 .signup {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0.26), rgba(0, 0, 255, 0.331)),
-        url(../assets/image/login_signup/backgroundSignUp_Login.jpg);
-    background-size: contain;
+    background-image: url(../assets/image/login_signup/backgroundSignUp_Login.jpg);
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    height: 1000px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0,0,0,.65) !important;
 }
 // modalSignup
 .modalSingup {
@@ -53,18 +54,18 @@
     // alertSuccess
     .alertSignupSuccess {
         padding: 0;
-        background-color: #FFFFCC;
+        background-color: #ffffcc;
         box-shadow: 0 0 10px 7px grey;
         border-radius: 26px;
-        .swal2-header{
+        .swal2-header {
             .swal2-title {
-                color: #00CC00 !important;
+                color: #00cc00 !important;
                 letter-spacing: 2px;
                 font-size: 22px;
                 margin-bottom: 0;
             }
         }
-        
+
         .swal2-warning {
             width: 50px;
             height: 50px;
@@ -73,8 +74,8 @@
                 font-size: 40px;
             }
         }
-        .swal2-actions{
-            .swal2-confirm{
+        .swal2-actions {
+            .swal2-confirm {
                 margin-bottom: 20px !important;
             }
         }
@@ -82,7 +83,7 @@
     // alertError
     .alertSignupError {
         padding: 0;
-        background-color: #CCFFCC;
+        background-color: #ccffcc;
         box-shadow: 0 0 10px 7px grey;
         border-radius: 26px;
         .swal2-title {
@@ -99,8 +100,8 @@
                 font-size: 40px;
             }
         }
-        .swal2-actions{
-            .swal2-confirm{
+        .swal2-actions {
+            .swal2-confirm {
                 margin-bottom: 20px !important;
             }
         }
@@ -126,13 +127,11 @@
         }
     }
     // swalalert2
-    .swal2-container{
-
-        .alertSignupSuccess{
+    .swal2-container {
+        .alertSignupSuccess {
             width: 52% !important;
-
         }
-        .alertSignupError{
+        .alertSignupError {
             width: 52% !important;
         }
     }
@@ -144,14 +143,12 @@
     .modalSingup {
         width: 50% !important ;
     }
-     // swalalert2
-     .swal2-container{
-
-        .alertSignupSuccess{
+    // swalalert2
+    .swal2-container {
+        .alertSignupSuccess {
             width: 69% !important;
-
         }
-        .alertSignupError{
+        .alertSignupError {
             width: 69% !important;
         }
     }
@@ -162,14 +159,13 @@
     .modalSingup {
         width: 70% !important ;
     }
-    .alertSignupSuccess{
+    .alertSignupSuccess {
         width: 85% !important;
-        .swal2-header{
+        .swal2-header {
             .swal2-title {
-               font-size: 22px !important;
+                font-size: 22px !important;
             }
         }
-
     }
     .alertSignupError {
         width: 85% !important;

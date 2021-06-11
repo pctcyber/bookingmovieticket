@@ -156,93 +156,69 @@
                 }
             }
             // -------nav-btn--------
-            .nav-btn {
-                display: none;
-            }
+
             .nav-mobile {
-                position: fixed;
-                top: 0;
-                right: 0;
-                height: 100%;
                 display: none;
-                width: 65%;
-
-                background-color: white;
-                z-index: 2;
-                
-                animation: move linear 0.5s;
-                .row1 {
-                    border-bottom: 1px dashed #80808096;
-                    width: 100%;
-                    margin: 0;
-                    .colum6right {
-                        .iconUser {
-                            color: rgba(0, 0, 255, 0.219);
-                            width: 30px;
-                            height: 30px;
-                        }
-                        .loginsignup {
-                            a {
-                                font-size: 18px;
-                                color: orange !important;
-                                &:hover{
-                                    color: red !important;
-                                }
-                            }
-                        }
-                    }
-                    .colum6left {
-                        .iconTimes {
-                            width: 30px;
-                            height: 30px;
-                            cursor: pointer;
-                        }
-                    }
+                .btnshowdrawer {
+                    font-size: 27px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 12px;
                 }
-                .row2 {
-                    width: 100%;
-                    margin: 0;
-                    margin-top: 20px;
-                    ul {
-                        li {
-                            list-style: none;
-                            margin-bottom: 4px;
-                            padding: 7px;
-                            border-radius: 5px;
-                            transition: all linear 0.3s;
-                            &:hover {
-                                background-color: rgba(128, 128, 128, 0.404);
-                                a {
-                                    color: #0000dd;
-                                    transition: all linear 0.3s;
-                                }
-                            }
-                            a {
-                                color: green;
-                                font-size: 18px;
-                                font-weight: 400;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .nav-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.7);
-                z-index: 1;
-
-                animation: FadeIn linear 0.4s;
             }
         }
     }
 }
+// showdrawer
+.showdrawer {
+        display: none;
+    .ant-drawer-body {
+        background-image: linear-gradient(to bottom right,
+         rgba(255, 255, 0, 0.363),rgba(0, 0, 255, 0.137));
+        .user_title {
+            display: flex;
+            justify-content: space-between;
+            color: #0066FF;
+            padding: 6px;
 
+            &:hover{
+                span:nth-child(1){
+                    color: #FF3333;
+                }
+            }
+            span:nth-child(1){
+                font-size: 19px;
+                transition: all linear .4s;
+                .txt_taikhoan{
+                    cursor: pointer;
+                }
+            }
+            span:nth-child(2){
+                .icontime{
+                    font-size: 30px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .user_link {
+            margin-top: 15px;
+            font-size: 17px;
+            
+            p {
+                cursor: pointer;
+                color: #FF33CC;
+                transition: all linear .4s;
+                padding: 6px;
+                &:hover{
+                    color: red;
+                    background-color: rgba(128, 128, 128, 0.459);
+                   
+                }
+            }
+        }
+    }
+}
 /*------------------  Responsive ----------------*/
 //==========>  1200px
 @media screen and (max-width: 1200px) {
@@ -298,6 +274,7 @@
             }
         }
     }
+   
 }
 
 //===========> 992px
@@ -359,6 +336,7 @@
             }
         }
     }
+    
 }
 
 //============> 768px
@@ -379,34 +357,16 @@
                 justify-content: flex-end;
                 .nav-pc {
                     display: none;
-                    .colum9 {
-                    }
-                    .colum3 {
-                    }
                 }
-                .nav-btn {
-                    display: inline-block;
-                    margin-bottom: 0;
-                    .iconbars {
-                        width: 55px;
-                        height: 55px;
-                        color: yellowgreen;
-                        cursor: pointer;
-                    }
-                }
+
                 .nav-mobile {
-                    width: 55%;
-                }
-                .nav-input:checked ~ .nav-overlay {
-                    display: block;
-                }
-                .nav-input:checked ~ .nav-mobile {
                     display: inline-block;
-                    transform: translateX(0);
-                    opacity: 1;
                 }
             }
         }
+    }
+    .showdrawer{
+        display: inline-block;
     }
 }
 
@@ -420,12 +380,6 @@
                 a {
                     img {
                     }
-                }
-            }
-            .colum10 {
-                .nav-pc {
-                }
-                .nav-btn {
                 }
             }
         }
@@ -452,3 +406,4 @@
         opacity: 1;
     }
 }
+

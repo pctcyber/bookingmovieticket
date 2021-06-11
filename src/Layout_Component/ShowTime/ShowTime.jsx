@@ -138,8 +138,13 @@ export default function ShowTime() {
                                     <div className="card-body p-0 mt-2">
                                         <p className='text text-center p-2 textTenFilm  '>{itemFilm.tenPhim}</p>
 
-                                        <button className='btn  btnGetTicket w-100  text-white
-                                            '>Get Ticket</button>
+                                        <NavLink 
+                                        className='btn  btnGetTicket w-100  text-white
+                                        '
+                                       to ={`/detail/${itemFilm.maPhim}`}
+                                        >
+                                            Get Ticket
+                                        </NavLink>
                                     </div>
                                 </div>
                             })

@@ -102,13 +102,31 @@ class BookingMovie {
     // update inforUser
 
     updateInforUser = (userInfor) => {
-        console.log(userInfor);
         return axios ({
             url:`${DOMAIN}/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung`,
             method:'PUT',
             data:userInfor,
             headers: {'Authorization': 'Bearer ' + localStorage.getItem('accessToken')}
 
+        })
+    }
+
+    // addFilm 
+    addFilm = (formData) => {
+        return axios({
+            url:`${DOMAIN}/api/QuanLyPhim/ThemPhimUploadHinh`,
+            method:'POST',
+            data:formData
+        })        
+    }
+    //  delete film
+    deleteFilm = (maphim,token) => {
+        console.log(token);
+        return axios({
+            url:`${DOMAIN}/api/QuanLyPhim/XoaPhim?MaPhim=${maphim}`,
+            method:'DELETE',
+            data: maphim,
+            headers: {"Authorization": "Bearer " + token}
         })
     }
 }

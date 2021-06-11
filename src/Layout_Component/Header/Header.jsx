@@ -3,27 +3,50 @@ import "../../scss/Header.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { NavLink } from 'react-router-dom'
 import '../../../node_modules/antd/dist/antd.css'
-import { FaUser, FaPowerOff } from "react-icons/fa"
+import { FaUser, FaPowerOff, FaTimes } from "react-icons/fa"
 import logo from "../../assets/image/logo/logoHeader.jpg"
 import { Button, Popover } from 'antd'
 import { Link } from 'react-scroll'
 import { history } from '../../App'
 import { Fragment } from 'react'
+// drawer
+import 'antd/dist/antd.css';
+import { Drawer } from 'antd';
+import { FaBars } from 'react-icons/fa'
+import { set } from 'react-hook-form'
+
 
 export default function Header(props) {
+
+
+    // 
+    const taiKhoan = localStorage.getItem("taiKhoan")
+    const [visible, setVisible] = useState(false);
+    const [visible1, setVisible1] = useState(false);
+    const [userAccount, setUserAccount] = useState(localStorage.getItem('taiKhoan'))
+
+    const showDrawer = () => {
+        setVisible(true);
+    };
+
+    const onClose = () => {
+        setVisible(false);
+    };
+
     const { path } = props
     // handleLogout
     const handleLogout = () => {
-        history.push('/')
+        setVisible(false)
         setUserAccount(null)
         localStorage.clear()
 
-        localStorage.clear()
     }
     // scrolltoshowtime
     const scrollToShowTime = () => {
 
         if (path === '/') {
+            setVisible(false)
+
             window.scrollTo({
                 top: 490,
                 left: 0,
@@ -44,6 +67,8 @@ export default function Header(props) {
     // scrolltoTheater
     const scrollToTheater = () => {
         if (path === '/') {
+            setVisible(false)
+
             window.scrollTo({
                 top: 1400,
                 left: 0,
@@ -64,6 +89,7 @@ export default function Header(props) {
     // scrolltonew
     const scrollToNew = () => {
         if (path === '/') {
+            setVisible(false)
             window.scrollTo({
                 top: 2050,
                 left: 0,
@@ -81,34 +107,14 @@ export default function Header(props) {
             }, 4500)
         }
     }
-    // scrolltopromotion
-    const scrollToPromotion = () => {
-        if (path === '/') {
-            window.scrollTo({
-                top: 2050,
-                left: 0,
-                behavior: 'smooth'
-            })
-        } else if (path !== '/') {
-            history.push('/')
-            setTimeout(() => {
-                console.log(234);
-                window.scrollTo({
-                    top: 2050,
-                    left: 0,
-                    behavior: 'smooth'
-                })
-            }, 4500)
-        }
+    // handleUserInfor
+    const handleUserInfor = () => {
+        history.push('/userinfo')
     }
-    const [visible, setVisible] = useState(false)
-    const hide = () => {
-        setVisible(false)
+
+    const handleVisibleChange = (visible1) => {
+        setVisible1(visible1)
     }
-    const handleVisibleChange = (visible) => {
-        setVisible(visible)
-    }
-    const [userAccount, setUserAccount] = useState(localStorage.getItem('taiKhoan'))
     return (
         <div>
             <div className='header'>
@@ -122,12 +128,12 @@ export default function Header(props) {
                         {/* nav-pc */}
                         <div className="nav-pc">
                             <div className="row">
-                                <div className="col-9 colum9">
+                                <div className="col-9 colum9 ">
                                     <ul>
+
                                         <li><a onClick={scrollToShowTime}>Showtime</a></li>
                                         <li><a onClick={scrollToTheater}>Theatres</a></li>
                                         <li><a onClick={scrollToNew}>News</a></li>
-                                        <li><a onClick={scrollToPromotion}>Promotion</a></li>
                                     </ul>
                                 </div>
                                 <div className="col-3 colum3">
@@ -161,7 +167,7 @@ export default function Header(props) {
                                                             }}>Logout</NavLink>}
 
                                                         trigger="click"
-                                                        visible={visible}
+                                                        visible={visible1}
                                                         onVisibleChange={handleVisibleChange}
                                                     >
                                                         <Button className='ml-2 powerOff' type="primary">
@@ -176,61 +182,66 @@ export default function Header(props) {
                             </div>
                         </div>
 
-                        {/* nav-btn */}
-                        <label htmlFor="nav-mobile-input" className="nav-btn">
-                            <FontAwesomeIcon icon="bars" className="iconbars">
-                            </FontAwesomeIcon></label>
-
-                        <input hidden type="checkbox" id='nav-mobile-input' className="nav-input" />
-
-                        {/* nav-mobile */}
-                        <label htmlFor="nav-mobile-input" className="nav-mobile">
-                            <div className='row p-3 row1'>
-                                <div className="col-8 colum6right">
-
-                                    {!userAccount ? <FontAwesomeIcon icon='user' className='iconUser' /> :
-                                        <div className='loginsignup'>
-                                            <NavLink to='/userinfo'
-                                                className=' text-success userInfor mx-2'>
-                                                {localStorage.getItem('taiKhoan')}
-                                            </NavLink>
+                        {/* nav-moble */}
+                        <div className='nav-mobile'>
+                            <Button
+                                className='btnshowdrawer'
+                                type="primary"
+                                onClick={showDrawer}>
+                                <FaBars />
+                            </Button>
+                            <Drawer
+                                className='showdrawer'
+                                closable={false}
+                                onClose={onClose}
+                                visible={visible}
+                            >
+                                {
+                                    <div>
+                                        <div className='user_title'>
+                                            <span>
+                                                {taiKhoan ? <span className='txt_taikhoan'
+                                                    onClick={handleUserInfor}
+                                                >{taiKhoan}</span> : <FaUser />}
+                                            </span>
+                                            <span>
+                                                <FaTimes
+                                                    className='icontime'
+                                                    onClick={() => {
+                                                        setVisible(false)
+                                                    }}></FaTimes>
+                                            </span>
                                         </div>
-                                    }
+                                        <div className="user_link">
+                                            <p
+                                                onClick={scrollToShowTime}>Showtime</p>
+                                            <p
+                                                onClick={scrollToTheater}
+                                            >Theaters</p>
 
-                                </div>
-                                <div className="col-4 text-right colum6left">
-                                    <img className='iconTimes' src="https://fullstack.edu.vn/assets/images/close-black.svg" alt="close" />
-                                </div>
+                                            <p
+                                                onClick={scrollToNew}
+                                            >News</p>
+                                            <p onClick={() => {
+                                                history.push('/login')
+                                            }}
+                                            > Login                                           </p>
+                                            <p onClick={() => {
+                                                history.push('/signup')
+                                            }}>
+                                                Signup
+                                            </p>
 
-                                <div className="row">
+                                            <p onClick={() => {
+                                                handleLogout()
+                                            }}>
+                                                Logout</p>
+                                        </div>
+                                    </div>
+                                }
+                            </Drawer>
+                        </div>
 
-                                </div>
-                            </div>
-                            <div className="row row2">
-                                <ul>
-
-                                    {!userAccount ?
-                                        <Fragment>
-
-                                            <li> <NavLink to="/login" className='userLogin '>Log In</NavLink>
-                                            </li>
-                                            <li> <NavLink to='/signup' className='userSignup'>Sign Up</NavLink>
-                                            </li>
-                                        </Fragment>
-
-                                        : ''}
-                                    <li><a onClick={scrollToShowTime}>Showtime</a></li>
-                                    <li><a onClick={scrollToTheater}>Theatres</a></li>
-                                    <li><a onClick={scrollToNew}>News</a></li>
-                                    <li><a onClick={scrollToPromotion}>Promotion</a></li>
-                                    <li><a onClick={handleLogout}>Logout</a></li>
-
-                                </ul>
-                            </div>
-
-                        </label>
-                        <label htmlFor="nav-mobile-input" className="nav-overlay">
-                        </label>
                     </div>
                 </div>
             </div>

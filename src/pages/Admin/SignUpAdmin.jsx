@@ -3,11 +3,10 @@ import "../../scss/Signup.scss"
 import Modal from "react-modal"
 import { FaTimes } from "react-icons/fa"
 import { NavLink } from 'react-router-dom'
-import Header from '../Header/Header'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import { useDispatch } from 'react-redux'
-import { signUpAction_Api } from '../../redux/actionCreater/Login_SignUp_Action/Login_SignUp_Action'
+import { signUpAction_Api, signUpAdmin } from '../../redux/actionCreater/Login_SignUp_Action/Login_SignUp_Action'
 
 // validation
 let userSingupSchema = yup.object().shape({
@@ -41,7 +40,7 @@ const customStyle = {
 
 }
 
-export default function SignUp() {
+export default function SignUpAdmin() {
 
     const dispatch = useDispatch()
     // stateModal
@@ -57,7 +56,7 @@ export default function SignUp() {
 
     // dispatch Action
     const _handleSubmit = (value) => {
-        dispatch(signUpAction_Api(value))
+        dispatch(signUpAdmin(value))
     }
 
     return (
@@ -88,7 +87,7 @@ export default function SignUp() {
                             soDt: '',
                             hoTen: '',
                             maNhom: 'GP03',
-                            maLoaiNguoiDung: 'KhachHang',
+                            maLoaiNguoiDung: 'QuanTri',
 
                         }}
                         validationSchema={userSingupSchema}

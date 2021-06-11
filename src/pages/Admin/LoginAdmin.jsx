@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../Header/Header'
 import '../../scss/Login.scss'
-import Footer from '../Footer/Footer'
 import Modal from 'react-modal'
 import { NavLink } from 'react-router-dom'
 import { FaTimes } from 'react-icons/fa'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux'
-import { LoginAction_Api } from '../../redux/actionCreater/Login_SignUp_Action/Login_SignUp_Action'
+import { LoginAction_Api_Admin } from '../../redux/actionCreater/Login_SignUp_Action/Login_SignUp_Action'
 
 // customStyle
 const customStyle = {
@@ -35,12 +33,12 @@ const userLoginSchema = yup.object().shape({
 
 })
 
-export default function Login() {
+export default function LoginAdmin() {
 
     const dispatch = useDispatch()
     // handleSubmit
     const handleSubmit = (value) => {
-        dispatch(LoginAction_Api(value))
+        dispatch(LoginAction_Api_Admin(value))
         
     }
 
@@ -52,7 +50,8 @@ export default function Login() {
    
     // useEffect
     useEffect(() => {
-        setOpenModal(true)
+        setOpenModal(true);
+        localStorage.clear();
     })
     return (
         <div className='login'>
@@ -72,11 +71,11 @@ export default function Login() {
                 </NavLink>
                 {/* Form Login */}
                 <div className="formLogin mt-4 text-center">
-                    <p>LOGIN ACCOUNT</p>
+                    <p>LOGIN ADMIN ACCOUNT</p>
                     <Formik
                         initialValues={
                             {
-                                taiKhoan: '',
+                                taiKhoan: '',   
                                 matKhau: ''
                             }
                         }
@@ -121,7 +120,7 @@ export default function Login() {
                                     </div>
                                     <div className='form-group mx-3'>
                                         <span  ><hr/></span>
-                                        <NavLink className='bg-success  text-white form-control ' to = "/signup">Create New Account</NavLink>
+                                        <NavLink className='bg-success  text-white form-control ' to = "/signup_admin">Create New Admin Account</NavLink>
                                     </div>
 
                                 </Form>

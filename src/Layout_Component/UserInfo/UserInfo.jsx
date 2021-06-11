@@ -157,6 +157,8 @@ export default function UserInfo() {
 
                         <button className="nav-link pb-3" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Booking History</button>
 
+                        {/* <NavLink to="/login_admin" className='text-center exit mt-3'>Admin</NavLink> */}
+                        
                         <NavLink to="/" className='text-center exit mt-3'>Exit</NavLink>
                     </div>
                    

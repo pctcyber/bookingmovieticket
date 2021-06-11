@@ -1,0 +1,154 @@
+.manageFilm {
+    .listFilm {
+        margin-top: 15px;
+        .table {
+            font-size: 13px;
+            th {
+                display: inline-block;
+                font-weight: 500;
+                padding: 0;
+                text-align: justify;
+            }
+            thead {
+                th {
+                    border-top: none;
+                }
+                th:nth-child(1) {
+                    width: 6%;
+                }
+                th:nth-child(2) {
+                    width: 11%;
+                }
+                th:nth-child(3) {
+                    width: 9%;
+                }
+                th:nth-child(4) {
+                    width: 13%;
+                }
+                th:nth-child(5) {
+                    width: 12%;
+                    padding-right: 17px;
+                }
+                th:nth-child(6) {
+                    width: 13%;
+                }
+                th:nth-child(7) {
+                    width: 8%;
+                    text-align: center;
+                }
+                th:nth-child(8) {
+                    width: 10%;
+                    text-align: center;
+                }
+                th:nth-child(9) {
+                    width: 8%;
+                    text-align: center;
+                }
+                th:nth-child(10) {
+                    width: 5%;
+                }
+                th:nth-child(11) {
+                    width: 5%;
+                }
+            }
+            tbody {
+                display: inline-block;
+                height: 490px;
+                overflow-y: scroll;
+                tr {
+                    width: 100%;
+                    padding-top: 22px;
+                    padding-bottom: 21px;
+                    display: inline-block;
+                    border-bottom: 1px dashed grey;
+                }
+                th {
+                    border: none;
+                    .btnedit{
+                        cursor: pointer;
+                    }
+                    .btnDelete{
+                        cursor: pointer;
+                    }
+                }
+                th:nth-child(1) {
+                    width: 6%;
+                }
+                th:nth-child(2) {
+                    width: 11%;
+                    text-transform: capitalize;
+                    padding-right: 22px;
+                }
+                th:nth-child(3) {
+                    width: 9%;
+                    word-wrap: break-word;
+                }
+                th:nth-child(4) {
+                    width: 13%;
+                    img {
+                        width: 100px;
+                        height: 120px;
+                    }
+                }
+                th:nth-child(5) {
+                    width: 12%;
+                    word-wrap: break-word;
+                    padding-right: 17px;
+                }
+                th:nth-child(6) {
+                    width: 13%;
+                    height: 120px;
+                    overflow-y: scroll;
+                }
+                th:nth-child(7) {
+                    width: 8%;
+                    text-align: center;
+                }
+                th:nth-child(8) {
+                    width: 10%;
+                    text-align: center;
+                }
+                th:nth-child(9) {
+                    width: 8%;
+                    text-align: center;
+                }
+                th:nth-child(10) {
+                    width: 5%;
+                    text-align: center;
+                    font-size: 20px;
+                }
+                th:nth-child(11) {
+                    width: 5%;
+                    text-align: center;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+// modalAddFilm
+.modalAddFilm {
+    position: absolute;
+    height: 535px;
+    top: 38px !important;
+    left: 33%;
+    .formAddFilm {
+        height: 440px;
+        overflow-y: scroll;
+        .ant-form-item-control-input-content {
+            display: flex;
+            justify-content: flex-end;
+            input {
+                width: 283px;
+            }
+        }
+        .ant-row:nth-child(10) {
+            .ant-form-item-control-input-content {
+                justify-content: center;
+                button {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
