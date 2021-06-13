@@ -60,7 +60,7 @@ export default function Header(props) {
                     left: 0,
                     behavior: 'smooth'
                 })
-            }, 4500)
+            }, 3000)
         }
 
     }
@@ -82,7 +82,7 @@ export default function Header(props) {
                     left: 0,
                     behavior: 'smooth'
                 })
-            }, 4500)
+            }, 3000)
         }
 
     }
@@ -104,7 +104,7 @@ export default function Header(props) {
                     left: 0,
                     behavior: 'smooth'
                 })
-            }, 4500)
+            }, 3000)
         }
     }
     // handleUserInfor
