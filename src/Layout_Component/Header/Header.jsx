@@ -19,7 +19,6 @@ import { set } from 'react-hook-form'
 export default function Header(props) {
 
 
-    // 
     const taiKhoan = localStorage.getItem("taiKhoan")
     const [visible, setVisible] = useState(false);
     const [visible1, setVisible1] = useState(false);
@@ -46,12 +45,13 @@ export default function Header(props) {
 
         if (path === '/') {
             setVisible(false)
-
-            window.scrollTo({
-                top: 490,
-                left: 0,
-                behavior: 'smooth'
-            })
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 490,
+                    left: 0,
+                    behavior: 'smooth'
+                })
+            }, 300)
         } else if (path !== '/') {
             history.push('/')
             setTimeout(() => {
@@ -68,12 +68,14 @@ export default function Header(props) {
     const scrollToTheater = () => {
         if (path === '/') {
             setVisible(false)
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 1400,
+                    left: 0,
+                    behavior: 'smooth'
+                })
+            }, 300)
 
-            window.scrollTo({
-                top: 1400,
-                left: 0,
-                behavior: 'smooth'
-            })
         } else if (path !== '/') {
             history.push('/')
             setTimeout(() => {
@@ -90,11 +92,14 @@ export default function Header(props) {
     const scrollToNew = () => {
         if (path === '/') {
             setVisible(false)
-            window.scrollTo({
-                top: 2050,
-                left: 0,
-                behavior: 'smooth'
-            })
+
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 2050,
+                    left: 0,
+                    behavior: 'smooth'
+                })
+            }, 300)
         } else if (path !== '/') {
             history.push('/')
             setTimeout(() => {
